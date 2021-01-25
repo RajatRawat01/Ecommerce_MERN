@@ -1,0 +1,160 @@
+create the mern directory
+=========================
+
+    > npx gitignore node
+
+        - above file used to pushing the libraries to GitHub (OS Dependencies).
+
+
+
+
+
+1) deploy the images to s3 bucket
+
+    URL : https://mernimage.s3.ap-south-1.amazonaws.com/p1.jpg
+
+                        to
+                                                        p6.png
+
+2) make the database ready
+
+        database_name       :       mernstack
+
+        collection_name     :       prod
+
+        user                :       admin
+
+        password            :       admin
+
+        URL : mongodb+srv://admin:admin@miniprojectdb.nzphu.mongodb.net/mern?retryWrites=true&w=majority
+
+
+3) create the backend directory
+
+    Ex.
+        backend
+
+        
+
+4) download node modules
+
+        => express    @types/express
+
+        => mongodb    @types/mongodb 
+
+        => cors       @types/cors
+
+        => body-parser      @types/body-parser 
+
+        - express used to develop the rest services.
+
+        - mongodb used to connect to mongodb database.
+
+        - cors used to enable the ports communication.
+
+        - body-parser module used to receive the data from client application.
+
+
+        > yarn add express @types/express mongodb @types/mongodb cors @types/cors body-parser @types/body-parser --save
+
+
+
+        *************************************************
+        backend
+              server.ts
+        *************************************************
+
+
+        => http://loalhost:8080/api/products
+
+                               => GET_PRODUCTS                  (loading:true)
+
+                               => GET_PRODUCTS_SUCCESS          (loading:false,value:products)
+
+                               => GET_PRODUCTS_FAIL             (error:error,loading:false)
+
+
+        => http://loalhost:8080/products/id
+
+                                => GET_DEATILS_PRODUCT          (loading:true)
+
+                                => GET_DEATILS_PRODUCT_SUCCESS  (loading:false,value:product)
+
+                                => GET_DEATILS_PRODUCT_FAIL     (error:error,loading:false)
+
+
+
+=> create the react application
+
+    > npx create-react-app frontend
+
+
+=> switch to react application
+
+    > cd frontend
+
+=> download libraries
+
+        1) redux
+
+        2) react-redux
+
+        3) redux-thunk
+
+        4) react-router-dom
+
+        5) axios
+
+
+        > yarn add redux react-redux redux-thunk react-router-dom axios --save
+
+
+
+=> create the actions
+
+            ***********************************************************
+            frontend
+                   src
+                     actions
+                         products.js
+
+                                => getProducts() is the action we defined
+                         details.js
+
+                                => getDetailsProduct() is the action we defined
+            ***********************************************************
+
+
+=> create the reducers
+
+        *********************************************************************************
+        frontend
+                src
+                    reducers
+                        products.js
+                        details.js
+        *********************************************************************************
+
+
+=> create the "store", "combine the reducers", and deploy reducers into "store", apply the "thunk" middleware, and make the availability of "store" to "App" Component.
+
+        Ex.
+            index.js
+
+
+
+=> implement the App Component.
+
+            **************************************************
+            frontend
+                   src
+                     App.js                 (Main Component)  (store)
+
+                     screens                (Child Components)  (store)
+                        HomeScreen.js
+                        ProductScreen.js
+                    
+                    index.css
+            ****************************************************
+
+
