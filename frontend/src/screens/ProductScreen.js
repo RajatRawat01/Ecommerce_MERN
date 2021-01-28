@@ -3,7 +3,7 @@ import * as actions from "../actions/details";
 import { useSelector,useDispatch } from "react-redux";
 import { NavLink,Link } from "react-router-dom";
 import Rating from "../components/Rating";
-//import LoadingBox from "../components/LoadingBox";
+import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 
 function ProductScreen(props){
